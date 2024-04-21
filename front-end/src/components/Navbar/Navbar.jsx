@@ -27,8 +27,8 @@ export const Navbar = () => {
                   nombre: "Iniciar Sesión",
                   opcion1: "Postulante",
                   opcion2: "Empresa",
-                  ruta1: "/inicio-postulante",
-                  ruta2: "/inicio-empresa",
+                  ruta1: "/login-postulante",
+                  ruta2: "/login-empresa",
                 }}
               />
             </li>

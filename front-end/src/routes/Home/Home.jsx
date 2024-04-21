@@ -1,5 +1,5 @@
 import { CareerCard } from "../../components/CareerCard/CareerCard";
-import "./Home.css";
+import "./Home.css"; // Esto es una IMPORTACIÒN de CSS GLOBAL -> Tengo que usar CSS Modules
 
 export const Home = () => {
   return (
