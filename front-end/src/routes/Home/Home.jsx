@@ -18,22 +18,33 @@ export const Home = () => {
       <form className="formulario">
         <div className="contenedor-input">
           <label htmlFor="input-carrera"></label>
-          <input type="text" id="input-carrera" className="input-carrera ancho-total" />
+          <input type="text" id="input-carrera" className="input-carrera ancho-total" placeholder="Ingresa tu carrera" />
         </div>
 
+        
         <div className="contenedor-select">
-          {/* <label htmlFor="input-lugar">Lugar</label> */}
           <select name="" id="input-lugar" className="input-lugar ancho-total">
             <option value="">
-              {/* <i class="bi bi-geo-alt"></i> */}
-              <span>Lugar</span>
+            <span>Lugar</span>
             </option>
             <option value="">Lima</option>
             <option value="">Ica</option>
             <option value="">Huancayo</option>
+            
             <option value="">Puno</option>
             <option value="">Cusco</option>
           </select>
+          {/* <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle input-lugar ancho-total" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-geo-alt"></i>
+              Lugar
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div> */}
         </div>
 
         <div className="contenedor-boton">
