@@ -1,14 +1,14 @@
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Dropdown } from "../Dropdown/Dropdown";
-import "./Navbar.css";
+import styles from  "./Navbar.module.css";
 
 export const Navbar = () => {
   return (
-      <header>
+      <header className={styles.header}>
         <nav>
-          <ul>
+          <ul className={styles.lista}>
             <li>
-              <Link to="/">Logo</Link>
+              <Link to="/" className={styles.enlace}>Logo</Link>
             </li>
             <li>
               <Dropdown

@@ -1,0 +1,83 @@
+.contenedorHome {
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 70px 0;
+}
+
+.contenedorTitulo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.titulo {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.contenedorParrafo {
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  /* margin: 20px 0; */
+}
+
+.formulario {
+  /* border: 1px solid blue; */
+  border: none;
+  border-radius: 5px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  gap: 30px;
+  margin: 20px 0 60px;
+}
+
+.contenedorInput {
+  flex-grow: 3;
+}
+
+.contenedorSelect {
+  flex-grow: 1;
+}
+
+.fontBlack {
+  color: black;
+}
+
+.inputLugar {
+  /* width: 100%; */
+  padding: 10px 15px;
+  outline: none;
+  border: 1px solid rgb(151, 151, 151);
+  border-radius: 4px;
+  font-size: 1.1rem;
+}
+
+.contenedorBoton {
+  flex-grow: 1;
+}
+
+.btnBuscar {
+  /* width: 100%; */
+  padding: 10px 15px;
+  outline: none;
+  font-size: 1.1rem;
+}
+
+.contenedorCarreras {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  /* align-self: center; */
+  flex-wrap: wrap;
+  /* border: 1px solid red; */
+  /* gap: 3rem 5rem; */
+  row-gap: 3rem;
+}

@@ -1,9 +1,9 @@
-header {
+.header {
     background-color: #071c33;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-ul {
+.lista {
     display: flex;
     align-items: center;
     list-style-type: none;
@@ -13,7 +13,7 @@ ul {
 
 }
 
-a {
+.enlace {
     text-decoration: none;
 }
 

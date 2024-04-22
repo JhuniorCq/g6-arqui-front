@@ -1,13 +1,26 @@
-export const Input = ({ label, type, placeholder, className }) => {
+import './Input.css';
+
+export const Input = ({ label, type, placeholder, className, id }) => {
   return (
     <>
-      <label htmlFor={className}>{label}</label>
-      <input
-        type={type}
-        placeholder={placeholder}
-        className={className}
-        id={className}
-      />
+      {label ? (
+        <>
+          <label htmlFor={id}>{label}</label>
+          <input
+            type={type}
+            placeholder={placeholder}
+            className={className}
+            id={id}
+          />
+        </>
+      ) : (
+        <input
+          type={type}
+          placeholder={placeholder}
+          className={className}
+          id={id}
+          />
+        )}
     </>
   );
 };

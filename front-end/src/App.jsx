@@ -20,7 +20,9 @@ function App() {
         />
         <Route
           path="/login-empresa"
-          element={<Login titulo="Inicio de Sesión - Empresa" tipo="empresa" />}
+          element={
+            <Login titulo="Inicio de Sesión - Empresa" tipo="empresa" />
+          }
         />
       </Routes>
     </>
