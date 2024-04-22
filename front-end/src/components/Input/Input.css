@@ -1,0 +1,26 @@
+.anchoTotal {
+  width: 100%;
+}
+
+/* Estilos para los INPUTS del <Home /> */
+.inputCarrera {
+  outline: none;
+  padding: 10px 15px;
+  border: 1px solid rgb(151, 151, 151);
+  border-radius: 4px;
+  font-size: 1.1rem;
+}
+
+/* Estilos para los INPUTS del <Login /> */
+label {
+  /* font-weight: bold; */
+  font-size: 1.3rem;
+}
+
+.inputRegistro {
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  outline: none;
+  border: 1px solid rgb(151, 151, 151);
+  border-radius: 4px;
+}
