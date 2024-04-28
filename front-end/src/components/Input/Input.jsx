@@ -1,6 +1,6 @@
 import './Input.css';
 
-export const Input = ({ label, type, placeholder, className, id }) => {
+export const Input = ({ label, type, placeholder, className, name, id, onChange }) => {
   return (
     <>
       {label ? (
@@ -10,7 +10,9 @@ export const Input = ({ label, type, placeholder, className, id }) => {
             type={type}
             placeholder={placeholder}
             className={className}
+            name={name}
             id={id}
+            onChange={onChange}
           />
         </>
       ) : (
@@ -18,7 +20,9 @@ export const Input = ({ label, type, placeholder, className, id }) => {
           type={type}
           placeholder={placeholder}
           className={className}
+          name={name}
           id={id}
+          onChange={onchange}
           />
         )}
     </>
