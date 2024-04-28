@@ -1,24 +1,49 @@
 import { Link } from "react-router-dom";
 import { Input } from "../../components/Input/Input";
+import { useForm } from "../../hooks/useForm";
+import { usePost } from "../../hooks/usePost";
 import styles from "./Login.module.css";
 
 export const Login = ({ titulo, tipo }) => {
-  return (
+  const { manejarCambiosForm, state } = useForm({
+    inputCorreo: "",
+    inputContra: "",
+  });
+
+  const { axiosPost, statePost, setStatePost } = usePost("");
+  const { responsePost, loading, error } = statePost;
+
+  const enviarForm = (event) => {
+    event.preventDefault();
+
+    //Actualizo el ESTADO de la solicitud POST para que el "loading" ahora sea "true"
+    setStatePost({
+      ...statePost,
+      loading: false, //Si pongo esto a false, ya no se mostrará el Cargando indefinidamente
+    });
+
+    //Llamo a axiosPost para enviar los datos al back / Como axiosPost está comentado se mostrará "Cargando..." indefinidamente
+    // axiosPost({});
+    console.log(state);
+  };
+
+  return loading ? (
+    <p>Cargando ...</p>
+  ) : (
     <div className={styles.contenedorLogin}>
       <div className={styles.contenedorTitulo}>
         <h1>{titulo}</h1>
       </div>
-      <form className={styles.formLogin}>
-        {/* <div className={styles.contenedorInputs}>
-          
-        </div> */}
+      <form className={styles.formLogin} onSubmit={enviarForm}>
         <div className={styles.contenedorInput}>
           <Input
             label="Correo"
-            type="text"
+            type="email"
             placeholder="Tucorreo@ejemplo.com"
             className="inputRegistro"
+            name="inputCorreo"
             id="inputCorreo"
+            onChange={manejarCambiosForm}
           />
         </div>
 
@@ -28,7 +53,9 @@ export const Login = ({ titulo, tipo }) => {
             type="password"
             placeholder="Contraseña"
             className="inputRegistro"
+            name="inputContra"
             id="inputContra"
+            onChange={manejarCambiosForm}
           />
         </div>
 
@@ -37,7 +64,6 @@ export const Login = ({ titulo, tipo }) => {
         </div>
 
         <div>
-          {/* Por ahora será un <a>, luego será <Link /> */}
           <a href="#">Olvide mi contraseña</a>
         </div>
 
@@ -55,8 +81,6 @@ export const Login = ({ titulo, tipo }) => {
             </Link>
           </p>
         </div>
-
-        <div className="contenedor-inputs"></div>
       </form>
     </div>
   );
