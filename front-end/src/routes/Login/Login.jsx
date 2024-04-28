@@ -5,7 +5,7 @@ import { usePost } from "../../hooks/usePost";
 import styles from "./Login.module.css";
 import { useId } from "react";
 
-export const Login = ({ titulo, tipo }) => {
+export const Login = ({ titulo, usuario }) => {
 
   const id = useId();
 
@@ -14,7 +14,9 @@ export const Login = ({ titulo, tipo }) => {
     inputContra: "",
   });
 
-  const { axiosPost, statePost, setStatePost } = usePost("");
+  const URL = usuario === "postulante" ? '': '';
+
+  const { axiosPost, statePost, setStatePost } = usePost(URL); // Acá le paso como parámetro una URL del back
   const { responsePost, loading, error } = statePost;
 
   const enviarForm = (event) => {
@@ -76,7 +78,7 @@ export const Login = ({ titulo, tipo }) => {
             ¿No estás registrado?,{" "}
             <Link
               to={
-                tipo === "postulante"
+                usuario === "postulante"
                   ? "/registro-postulante"
                   : "/registro-empresa"
               }

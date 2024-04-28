@@ -9,7 +9,7 @@ import { RegisterCompany } from "./routes/Register/RegisterCompany";
 function App() {
   return (
     <>
-      <Navbar />
+      <Navbar usuario={null} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/registro-postulante" element={<RegisterPostulant />} />
@@ -17,13 +17,13 @@ function App() {
         <Route
           path="/login-postulante"
           element={
-            <Login titulo="Inicio de Sesión - Postulante" tipo="postulante" />
+            <Login titulo="Inicio de Sesión - Postulante" usuario="postulante" />
           }
         />
         <Route
           path="/login-empresa"
           element={
-            <Login titulo="Inicio de Sesión - Empresa" tipo="empresa" />
+            <Login titulo="Inicio de Sesión - Empresa" usuario="empresa" />
           }
         />
       </Routes>
