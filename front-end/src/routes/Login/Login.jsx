@@ -1,20 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input/Input";
 import { useForm } from "../../hooks/useForm";
 import { usePost } from "../../hooks/usePost";
 import styles from "./Login.module.css";
-import { useId } from "react";
+import { useContext, useId } from "react";
+import { AuthContext } from "../../context/Auth/AuthContext";
 
-export const Login = ({ titulo, usuario }) => {
+export const Login = ({ titulo, typeUser }) => {
 
   const id = useId();
+  const navigate = useNavigate();
+
+  const authContext = useContext(AuthContext);
+  const { user, login, logout } = authContext;
 
   const { manejarCambiosForm, state } = useForm({
-    inputCorreo: "",
-    inputContra: "",
+    [`${id}-correo`]: "",
+    [`${id}-password`]: "",
   });
 
-  const URL = usuario === "postulante" ? '': '';
+  const URL = typeUser === "postulante" ? '': '';
 
   const { axiosPost, statePost, setStatePost } = usePost(URL); // Acá le paso como parámetro una URL del back
   const { responsePost, loading, error } = statePost;
@@ -31,6 +36,11 @@ export const Login = ({ titulo, usuario }) => {
     //Llamo a axiosPost para enviar los datos al back / Como axiosPost está comentado se mostrará "Cargando..." indefinidamente
     // axiosPost({});
     console.log(state);
+    // Si las credenciales son válidas -> llamamos a la Función "login" del Contexto Auth
+    alert("Inicio de Sesión Exitoso");
+    login();
+    // Con eso lo redireccionamos al "Home", pero ya con credenciales de Usuario
+    navigate("/");
   };
 
   return loading ? (
@@ -78,7 +88,7 @@ export const Login = ({ titulo, usuario }) => {
             ¿No estás registrado?,{" "}
             <Link
               to={
-                usuario === "postulante"
+                typeUser === "postulante"
                   ? "/registro-postulante"
                   : "/registro-empresa"
               }

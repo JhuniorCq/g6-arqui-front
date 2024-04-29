@@ -3,17 +3,16 @@ import { Dropdown } from "../Dropdown/Dropdown";
 import styles from "./Navbar.module.css";
 import { NavbarNoLogin } from "./NavbarNoLogin";
 import { NavbarPostulant } from "./NavbarPostulant";
-import { NavbarCompanny } from "./NavbarCompany";
+import { NavbarCompany } from "./NavbarCompany";
 
-export const Navbar = ({ usuario }) => {
-  return usuario === null ? (
-    <NavbarNoLogin />
-  ) : usuario === "postulante" ? (
+export const Navbar = ({ rol }) => {
+  return rol === "postulant" ? (
     <NavbarPostulant />
+  ) : rol === "company" ? (
+    <NavbarCompany />
   ) : (
-    <NavbarCompanny />
+    <NavbarNoLogin />
   );
-
 
   // <header className={styles.header}>
   //   <nav>
