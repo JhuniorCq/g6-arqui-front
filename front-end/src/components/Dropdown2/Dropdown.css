@@ -1,0 +1,10 @@
+/* Navbar.css */
+
+.btn-custom,
+.btn-custom:focus,
+.btn-custom:active,
+.btn-custom:hover { /* Aplica los estilos también cuando el botón está activo, enfocado o al pasar el mouse sobre él */
+  background-color: transparent;
+  border: 1px solid white;
+  color: white !important; /* Asegura que el color del texto sea blanco */
+}
