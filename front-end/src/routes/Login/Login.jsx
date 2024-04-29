@@ -4,7 +4,12 @@ import { useForm } from "../../hooks/useForm";
 import { usePost } from "../../hooks/usePost";
 import styles from "./Login.module.css";
 
+import { useId } from "react";
+
 export const Login = ({ titulo, tipo }) => {
+
+  const id = useId();
+
   const { manejarCambiosForm, state } = useForm({
     inputCorreo: "",
     inputContra: "",
@@ -41,8 +46,8 @@ export const Login = ({ titulo, tipo }) => {
             type="email"
             placeholder="Tucorreo@ejemplo.com"
             className="inputRegistro"
-            name="inputCorreo"
-            id="inputCorreo"
+            name={`${id}-correo`}
+            id={`${id}-correo`}
             onChange={manejarCambiosForm}
           />
         </div>
@@ -53,8 +58,8 @@ export const Login = ({ titulo, tipo }) => {
             type="password"
             placeholder="Contraseña"
             className="inputRegistro"
-            name="inputContra"
-            id="inputContra"
+            name={`${id}-password`}
+            id={`${id}-password`}
             onChange={manejarCambiosForm}
           />
         </div>
