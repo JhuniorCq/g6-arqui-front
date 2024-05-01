@@ -9,6 +9,7 @@ import { useContext } from "react";
 import { AuthContext } from "./context/Auth/AuthContext";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
 import { PublishOffer } from "./routes/PublishOffer/PublishOffer";
+import { MyPublications } from "./routes/MyPublications/MyPublications";
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
         {/* Rutas para la Empresa */}
         <Route element={<ProtectedRoute redirectTo="/" isAllowed={!!user && user.rol.includes("company")} />}>
           <Route path="/publicar-ofertas" element={<PublishOffer />} />
+          <Route path="/mis-publicaciones" element={<MyPublications />} />
         </Route>
       </Routes>
     </>

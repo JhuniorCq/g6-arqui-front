@@ -21,7 +21,7 @@ export const NavbarCompany = () => {
             <NavLink to="/publicar-ofertas" className={({ isActive }) => isActive ? `${styles.activo} ${styles.enlace}`: `${styles.enlace}`}>Publicar Oferta</NavLink>
           </li>
           <li>
-            <NavLink to="/mis-publicaciones" className={({ isActive }) => isActive ? `${styles.activo} ${styles.enlace}`: `${styles.enlace}`}>Mis Avisos</NavLink>
+            <NavLink to="/mis-publicaciones" className={({ isActive }) => isActive ? `${styles.activo} ${styles.enlace}`: `${styles.enlace}`}>Mis Publicaciones</NavLink>
           </li>
           <li>
             <Dropdown 
