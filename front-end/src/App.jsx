@@ -7,17 +7,19 @@ import { RegisterPostulant } from "./routes/Register/RegisterPostulant";
 import { RegisterCompany } from "./routes/Register/RegisterCompany";
 import { useContext } from "react";
 import { AuthContext } from "./context/Auth/AuthContext";
+import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
+import { PublishOffer } from "./routes/PublishOffer/PublishOffer";
 
 function App() {
 
   const authContext = useContext(AuthContext);
   const { user, login, logout } = authContext;
 
-  // console.log(user);
+  console.log(user);
 
   return (
     <>
-      <Navbar rol={user.rol} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/registro-postulante" element={<RegisterPostulant />} />
@@ -28,6 +30,9 @@ function App() {
 
 
         {/* Rutas para la Empresa */}
+        <Route element={<ProtectedRoute redirectTo="/" isAllowed={!!user && user.rol.includes("company")} />}>
+          <Route path="/publicar-ofertas" element={<PublishOffer />} />
+        </Route>
       </Routes>
     </>
   );

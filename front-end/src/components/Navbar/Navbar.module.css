@@ -1,6 +1,9 @@
 .header {
     background-color: #071c33;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    height: 75px;
+    display: flex;
+    align-items: center;
 }
 
 .lista {
@@ -8,12 +11,13 @@
     align-items: center;
     list-style-type: none;
     margin: 0;
-    padding: 18px 20px;
     gap: 25px;
 
 }
 
 .enlace {
     text-decoration: none;
+    color: white;
 }
 
+/* Estilos NavbarCompany */

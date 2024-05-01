@@ -35,12 +35,13 @@ export const Login = ({ titulo, typeUser }) => {
 
     //Llamo a axiosPost para enviar los datos al back / Como axiosPost está comentado se mostrará "Cargando..." indefinidamente
     // axiosPost({});
-    console.log(state);
+
     // Si las credenciales son válidas -> llamamos a la Función "login" del Contexto Auth
     alert("Inicio de Sesión Exitoso");
     login();
-    // Con eso lo redireccionamos al "Home", pero ya con credenciales de Usuario
-    navigate("/");
+
+    // Con eso lo redireccionamos al "Home" si es Postulante o al "PublicarOfertas" si es Empresa, pero ya con credenciales de Usuario
+    user.rol.includes("postulant") ? navigate("/"): navigate("/publicar-ofertas"); 
   };
 
   return loading ? (

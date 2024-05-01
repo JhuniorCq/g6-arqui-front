@@ -10,26 +10,22 @@ export const NavbarNoLogin = () => {
             <li>
               <Link to="/" className={styles.enlace}>Logo</Link>
             </li>
+            {/* Agregue esto solo para PROBAR que la RUTA "/publicar-ofertas" está PROTEGIDA */}
+            {/* <li>
+              <Link to="/publicar-ofertas">Publicar Oferta</Link>
+            </li> */}
             <li>
               <Dropdown
-                datosDropdown={{
-                  nombre: "Registrarse",
-                  opcion1: "Postulante",
-                  opcion2: "Empresa",
-                  ruta1: "/registro-postulante",
-                  ruta2: "/registro-empresa",
-                }}
+                nombre="Registrarse"
+                ruta1="/registro-postulante"
+                ruta2="/registro-empresa"
               />
             </li>
             <li>
               <Dropdown
-                datosDropdown={{
-                  nombre: "Iniciar Sesión",
-                  opcion1: "Postulante",
-                  opcion2: "Empresa",
-                  ruta1: "/login-postulante",
-                  ruta2: "/login-empresa",
-                }}
+                nombre="Iniciar Sesión"
+                ruta1="/login-postulante"
+                ruta2="/login-empresa"
               />
             </li>
           </ul>
