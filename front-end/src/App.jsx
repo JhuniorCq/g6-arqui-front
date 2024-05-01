@@ -28,8 +28,9 @@ function App() {
         <Route path="/login-postulante" element={<Login titulo="Inicio de Sesión - Postulante" typeUser="postulante" />} />
         <Route path="/login-empresa"element={<Login titulo="Inicio de Sesión - Empresa" typeUser="empresa" />} />
         {/* Rutas para el Postulante */}
-
-
+        <Route element={<ProtectedRoute redirectTo="/" isAllowed={!!user && user.rol.includes("postulant")} />}>
+          {/* <Route path="/ACÁ PONES TU RUTA DE CONFIGURACIÓN" element={<ACÁ_PONES_EL_COMPONENTE_DE_CONFIGURACION />} /> -> ESTO LO BORRAS */}
+        </Route>
         {/* Rutas para la Empresa */}
         <Route element={<ProtectedRoute redirectTo="/" isAllowed={!!user && user.rol.includes("company")} />}>
           <Route path="/publicar-ofertas" element={<PublishOffer />} />
