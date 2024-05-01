@@ -4,11 +4,17 @@ import styles from "./Navbar.module.css";
 import { NavbarNoLogin } from "./NavbarNoLogin";
 import { NavbarPostulant } from "./NavbarPostulant";
 import { NavbarCompany } from "./NavbarCompany";
+import { useContext } from "react";
+import { AuthContext } from "../../context/Auth/AuthContext";
 
-export const Navbar = ({ rol }) => {
-  return rol === "postulant" ? (
+export const Navbar = () => {
+
+  const authContext = useContext(AuthContext);
+  const { user } = authContext;
+
+  return user.rol.includes("postulant") ? (
     <NavbarPostulant />
-  ) : rol === "company" ? (
+  ) : user.rol.includes("company") ? (
     <NavbarCompany />
   ) : (
     <NavbarNoLogin />

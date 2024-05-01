@@ -15,12 +15,16 @@ export const AuthProvider = ({ children }) => {
         setUser({
             id: 1,
             name: "Jhunior",
-            rol: "postulant" // El otro rol sería "company"
+            rol: ["company"] // Los roles son: "postulant" y "company"
         });
     };
 
     // Esta función será para cuando se CIERRE LA SESIÓN
-    const logout = () => setUser(null);
+    const logout = () => setUser({
+        id: null,
+        name: "",
+        rol: ""
+    });
 
     return (
         <AuthContext.Provider value={{ user, login, logout }}>
