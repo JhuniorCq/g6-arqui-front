@@ -1,6 +1,14 @@
-import './Input.css';
+import "./Input.css";
 
-export const Input = ({ label, type, placeholder, className, name, id, onChange }) => {
+export const Input = ({
+  label,
+  type,
+  placeholder,
+  className,
+  name,
+  id,
+  onChange,
+}) => {
   return (
     <>
       {label ? (
@@ -13,6 +21,7 @@ export const Input = ({ label, type, placeholder, className, name, id, onChange 
             name={name}
             id={id}
             onChange={onChange}
+            required
           />
         </>
       ) : (
@@ -23,8 +32,9 @@ export const Input = ({ label, type, placeholder, className, name, id, onChange 
           name={name}
           id={id}
           onChange={onchange}
-          />
-        )}
+          required
+        />
+      )}
     </>
   );
 };

@@ -1,9 +1,12 @@
-import { NavLink } from "react-router-dom";
-import './Dropdown.css';
+import { Link } from "react-router-dom";
+import "./Dropdown.css";
+import { useContext } from "react";
+import { AuthContext } from "../../context/Auth/AuthContext";
 
-export const Dropdown = ({ datosDropdown }) => {
-
-  const { nombre, opcion1, opcion2, ruta1, ruta2 } = datosDropdown;
+export const Dropdown = ({ userOptions = false, nombre, ruta1, ruta2 }) => {
+  
+  const authContext = useContext(AuthContext);
+  const { user, login, logout } = authContext;
 
   return (
     <div className="dropdown">
@@ -16,26 +19,28 @@ export const Dropdown = ({ datosDropdown }) => {
         {nombre}
       </button>
       <ul className="dropdown-menu dropdown-menu-primary">
-        <li>
-          <NavLink
-            to={ruta1}
-            className={({ isActive }) =>
-              isActive ? "dropdown-item activo" : "dropdown-item"
-            }
-          >
-            {opcion1}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to={ruta2}
-            className={({ isActive }) =>
-              isActive ? "dropdown-item activo" : "dropdown-item"
-            }
-          >
-            {opcion2}
-          </NavLink>
-        </li>
+        {userOptions ? (
+          <>
+            <li>
+              <Link to={ user.rol.includes("postulant") ? "/": "/publicar-ofertas" } className="dropdown-item">Inicio</Link>
+            </li>
+            <li>
+              <Link className="dropdown-item">Configuración</Link>
+            </li>
+            <li>
+              <Link className="dropdown-item" onClick={logout}>Cerrar Sesión</Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link to={ruta1} className="dropdown-item">Postulante</Link>
+            </li>
+            <li>
+              <Link to={ruta2} className="dropdown-item">Empresa</Link>
+            </li>
+          </>
+        )}
       </ul>
     </div>
   );

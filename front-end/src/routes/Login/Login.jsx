@@ -1,21 +1,27 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input/Input";
 import { useForm } from "../../hooks/useForm";
 import { usePost } from "../../hooks/usePost";
 import styles from "./Login.module.css";
+import { useContext, useId } from "react";
+import { AuthContext } from "../../context/Auth/AuthContext";
 
-import { useId } from "react";
-
-export const Login = ({ titulo, tipo }) => {
+export const Login = ({ titulo, typeUser }) => {
 
   const id = useId();
+  const navigate = useNavigate();
+
+  const authContext = useContext(AuthContext);
+  const { user, login, logout } = authContext;
 
   const { manejarCambiosForm, state } = useForm({
-    inputCorreo: "",
-    inputContra: "",
+    [`${id}-correo`]: "",
+    [`${id}-password`]: "",
   });
 
-  const { axiosPost, statePost, setStatePost } = usePost("");
+  const URL = typeUser === "postulante" ? '': '';
+
+  const { axiosPost, statePost, setStatePost } = usePost(URL); // Acá le paso como parámetro una URL del back
   const { responsePost, loading, error } = statePost;
 
   const enviarForm = (event) => {
@@ -29,7 +35,13 @@ export const Login = ({ titulo, tipo }) => {
 
     //Llamo a axiosPost para enviar los datos al back / Como axiosPost está comentado se mostrará "Cargando..." indefinidamente
     // axiosPost({});
-    console.log(state);
+
+    // Si las credenciales son válidas -> llamamos a la Función "login" del Contexto Auth
+    alert("Inicio de Sesión Exitoso");
+    login();
+
+    // Con eso lo redireccionamos al "Home" si es Postulante o al "PublicarOfertas" si es Empresa, pero ya con credenciales de Usuario
+    user.rol.includes("postulant") ? navigate("/"): navigate("/publicar-ofertas"); 
   };
 
   return loading ? (
@@ -77,7 +89,7 @@ export const Login = ({ titulo, tipo }) => {
             ¿No estás registrado?,{" "}
             <Link
               to={
-                tipo === "postulante"
+                typeUser === "postulante"
                   ? "/registro-postulante"
                   : "/registro-empresa"
               }

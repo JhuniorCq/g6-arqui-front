@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-export const usePost = (url= '') => {
+export const usePost = (url= '') => { //Si hay un Error por pasar la URL desde acá -> Se colocará la URL en axiosPost
 
     const [statePost, setStatePost] = useState({
         responsePost: null,
