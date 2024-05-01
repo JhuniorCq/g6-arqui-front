@@ -10,7 +10,10 @@ import { AuthContext } from "./context/Auth/AuthContext";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
 import { PublishOffer } from "./routes/PublishOffer/PublishOffer";
 import { MyPublications } from "./routes/MyPublications/MyPublications";
-import { Configuracion} from "./routes/Configuracion/Configuracion"
+import { Mypostulation} from "./routes/MyPostulation/MyPostulation";
+import { ConfiguracionPostulant } from "./routes/Configuracion/ConfiguracionPostulant";
+import { ConfiguracionCompany } from "./routes/Configuracion/ConfiguracionCompany";
+import { JobOffers } from "./routes/JobOffers/JobOffers";
 
 function App() {
 
@@ -29,14 +32,17 @@ function App() {
         <Route path="/registro-empresa" element={<RegisterCompany />} />
         <Route path="/login-postulante" element={<Login titulo="Inicio de Sesión - Postulante" typeUser="postulante" />} />
         <Route path="/login-empresa"element={<Login titulo="Inicio de Sesión - Empresa" typeUser="empresa" />} />
+        <Route path="/ofertas-empleo" element={<JobOffers />} />
         {/* Rutas para el Postulante */}
         <Route element={<ProtectedRoute redirectTo="/" isAllowed={!!user && user.rol.includes("postulant")} />}>
-          { <Route path="/configuracion" element={<Configuracion />} />/* <Route path="/ACÁ PONES TU RUTA DE CONFIGURACIÓN" element={<ACÁ_PONES_EL_COMPONENTE_DE_CONFIGURACION />} /> -> ESTO LO BORRAS */}
+           <Route path="/configuracion-postulante" element={<ConfiguracionPostulant/>} />
+           <Route path="/mis-postulaciones" element={<Mypostulation />} />
         </Route>
         {/* Rutas para la Empresa */}
         <Route element={<ProtectedRoute redirectTo="/" isAllowed={!!user && user.rol.includes("company")} />}>
           <Route path="/publicar-ofertas" element={<PublishOffer />} />
           <Route path="/mis-publicaciones" element={<MyPublications />} />
+          <Route path="/configuracion-empresa" element={<ConfiguracionCompany />} />
         </Route>
       </Routes>
     </>

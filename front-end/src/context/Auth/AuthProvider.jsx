@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
         setUser({
             id: 1,
             name: "Jhunior",
-            rol: ["company"] // Los roles son: "postulant" y "company"
+            rol: ["postulant"] // Los roles son: "postulant" y "company"
         });
     };
 

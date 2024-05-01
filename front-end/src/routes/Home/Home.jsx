@@ -3,8 +3,11 @@ import { Input } from "../../components/Input/Input";
 import styles from "./Home.module.css";
 import imgIngSoftware from '/img/ingenieria-software.jpg';
 import imgContabilidad from '/img/contabilidad.jpg';
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
+  
+  const navigate=useNavigate();
   return (
     <div className={styles.contenedorHome}>
       <div className={styles.contenedorTitulo}>
@@ -41,7 +44,8 @@ export const Home = () => {
         </div>
 
         <div className={styles.contenedorBoton}>
-          <button className={`btn btn-danger anchoTotal ${styles.btnBuscar}`}>Buscar Prácticas</button>
+          {/* Estoy agregando un useNavigate para acceder a ofertar de empleo */}
+          <button onClick={()=>navigate("/ofertas-empleo")} className={`btn btn-danger anchoTotal ${styles.btnBuscar}`}>Buscar Prácticas</button>
         </div>
       </form>
 

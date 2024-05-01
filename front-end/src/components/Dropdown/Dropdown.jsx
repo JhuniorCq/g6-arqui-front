@@ -25,7 +25,7 @@ export const Dropdown = ({ userOptions = false, nombre, ruta1, ruta2 }) => {
               <Link to={ user.rol.includes("postulant") ? "/": "/publicar-ofertas" } className="dropdown-item">Inicio</Link>
             </li>
             <li>
-              <Link className="dropdown-item">Configuración</Link>
+              <Link to={ user.rol.includes("postulant") ? "/configuracion-postulante": "/configuracion-empresa" } className="dropdown-item">Configuración</Link>
             </li>
             <li>
               <Link className="dropdown-item" onClick={logout}>Cerrar Sesión</Link>
