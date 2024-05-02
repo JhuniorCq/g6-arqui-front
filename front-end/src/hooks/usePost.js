@@ -1,29 +1,29 @@
 import axios from "axios";
 import { useState } from "react";
 
-export const usePost = (url= '') => { //Si hay un Error por pasar la URL desde acá -> Se colocará la URL en axiosPost
+export const usePost = () => { //Si hay un Error por pasar la URL desde acá -> Se colocará la URL en axiosPost
 
     const [statePost, setStatePost] = useState({
         responsePost: null,
-        loading: false,
-        error: null
+        loadingPost: false,
+        errorPost: null
     });
 
-    const axiosPost = async (payload) => {
+    const axiosPost = async (url="", payload) => {
         try {
             const response = await axios.post(url, payload);
 
             setStatePost({
                 responsePost: response.data,
-                loading: false,
-                error: null
+                loadingPost: false,
+                errorPost: null
             });
         } catch (err) {
             console.error('', err.message);
             setStatePost({
                 responsePost: null,
-                loading: false,
-                error: err
+                loadingPost: false,
+                errorPost: err
             });
         }
     }
