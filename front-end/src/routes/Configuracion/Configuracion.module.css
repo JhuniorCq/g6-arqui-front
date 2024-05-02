@@ -1,31 +1,31 @@
 
-.contenedor-home {
-    /* border: 1px solid green; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    padding: 70px 0;
+.contenedorHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 70px 0;
 }
 
-.contenedor-titulo1 {
+.contenedorTitulo1 {
   width: 90%;
   text-align: center;
   margin-bottom: 0px;
 }
 
 .titulo2 {
-    font-weight: bold;
-    font-size: 2rem;
-    text-align: left;
-    margin-left: 5%;
-    margin-bottom: -20px;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: left;
+  margin-left: 5%;
+  margin-bottom: -20px;
 }
+
 .titulo1 {
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-align: left;
-    margin-left: 5%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: left;
+  margin-left: 5%;
 }
 
 
@@ -40,76 +40,92 @@
 }
 
 .Tabladatos {
-    margin-top: 20px;
-    width: 100%;
-  }
-  
-  .Tabladatos table {
-    width: 90%; 
-    margin: 20px auto 60px; 
-    border-collapse: separate;
-    border-spacing: 0; 
-    border: 2px solid transparent; 
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); 
-  }
-  
-  .Tabladatos th, .Tabladatos td {
-    padding: 15px 25px; 
-    text-align: center; 
-    border-bottom: 2px solid #ccc; 
-  }
-  
-  .Tabladatos th {
-    background-color: #071c33; 
-    color: white; 
-  }
-  
-  .Tabladatos td:first-child {
-    font-weight: bold; 
-  }
+  width: 77%;
+  margin: 20px auto 60px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+}
 
-  .content {
-    border: none;
-    border-radius: 5px;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 15px 25px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    gap: 20px;
-  }
-  
-  .checkbox-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .content input{
-    border: none; 
-  }
-  .btn-confi img {
-    width: 20px;
-    margin-right: 10px;
-  }
-  .btn-container {
-    text-align: center;
-  }
-  
-  .btn-confi {
-    background-color: #32bc1b;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    display: inline-block; /* Asegurar que el botón se muestre como un bloque en línea */
-  }
-   
-  .contenedor-cam{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-  }
+.Tabladatos th,
+.Tabladatos td {
+  padding: 15px 25px;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+}
+
+.Tabladatos th {
+  background-color: #071c33;
+  color: white;
+}
+
+.Tabladatos td:first-child {
+  font-weight: bold;
+}
+
+.content {
+  border-radius: 5px;
+  width: 90%; /* Cambiado para que coincida con el ancho de la tabla */
+  margin: auto; /* Alineado al centro */
+  padding: 15px 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  gap: 20px;
+}
+
+.content p {
+  margin-left: 5px;
+}
+.content p {
+  width: 60%;
+}
+
+
+.checkboxContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.btnConfi {
+  background-color: #32bc1b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  margin-left: 10%;
+  width: 180px;
+}
+.btnConfi1 {
+  background-color: #32bc1b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  margin-left: 42%;
+  width: 180px;
+}
+btnContainer{
+  width: 40%;
+}
+
+.contenedorCam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+parte1{
+  width: 50%;
+  float: left;
+}
+parte2{
+  width: 40%;
+  float: right;
+}
