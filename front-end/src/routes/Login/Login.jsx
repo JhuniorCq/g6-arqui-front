@@ -65,9 +65,10 @@ export const Login = ({ titulo, typeUser }) => {
         <div className={styles.contenedorInput}>
           <Input
             label="Correo"
+            classLabel="labelRegistro"
             type="email"
             placeholder="Tucorreo@ejemplo.com"
-            className="inputRegistro"
+            classInput="inputRegistro"
             name={`${id}-correo`}
             id={`${id}-correo`}
             onChange={manejarCambiosForm}
@@ -77,9 +78,10 @@ export const Login = ({ titulo, typeUser }) => {
         <div className={styles.contenedorInput}>
           <Input
             label="Contraseña"
+            classLabel="labelRegistro"
             type="password"
             placeholder="Contraseña"
-            className="inputRegistro"
+            classInput="inputRegistro"
             name={`${id}-password`}
             id={`${id}-password`}
             onChange={manejarCambiosForm}
@@ -87,15 +89,15 @@ export const Login = ({ titulo, typeUser }) => {
         </div>
 
         <div className={styles.contenedorBoton}>
-          <button className="btn btn-danger">Ingresar</button>
+          <button className={`btn btn-danger ${styles.botonIngresar}`}>Ingresar</button>
         </div>
 
         <div>
-          <a href="#">Olvide mi contraseña</a>
+          <a href="#" className={styles.fontSize}>Olvide mi contraseña</a>
         </div>
 
         <div>
-          <p>
+          <p className={styles.fontSize}>
             ¿No estás registrado?,{" "}
             <Link
               to={

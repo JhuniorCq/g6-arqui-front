@@ -22,9 +22,10 @@ export const RegisterCompany = () => {
         <div className={styles.contenedorInput}>
           <Input
             label="Nombres"
+            classLabel="labelRegistro"
             type="text"
             placeholder="Ingrese sus nombres"
-            className=""
+            classInput="inputRegistro"
             name={`${id}-nombres`}
             id={`${id}-nombres`}
           />
@@ -33,9 +34,10 @@ export const RegisterCompany = () => {
         <div className={styles.contenedorInput}>
           <Input
             label="Apellidos"
+            classLabel="labelRegistro"
             type="text"
             placeholder="Ingrese sus apellidos"
-            className=""
+            classInput="inputRegistro"
             name={`${id}-apellidos`}
             id={`${id}-apellidos`}
           />
@@ -44,9 +46,10 @@ export const RegisterCompany = () => {
         <div className={styles.contenedorInput}>
           <Input
             label="Correo"
+            classLabel="labelRegistro"
             type="email"
             placeholder="Tucorreo@ejemplo.com"
-            className=""
+            classInput="inputRegistro"
             name={`${id}-correo`}
             id={`${id}-correo`}
           />
@@ -55,9 +58,10 @@ export const RegisterCompany = () => {
         <div className={styles.contenedorInput}>
           <Input
             label="RUC"
+            classLabel="labelRegistro"
             type="text"
             placeholder="12345678901"
-            className=""
+            classInput="inputRegistro"
             name={`${id}-ruc`}
             id={`${id}-ruc`}
           />
@@ -66,9 +70,10 @@ export const RegisterCompany = () => {
         <div className={styles.contenedorInput}>
           <Input
             label="Teléfono"
+            classLabel="labelRegistro"
             type="text"
             placeholder="987654321"
-            className=""
+            classInput="inputRegistro"
             name={`${id}-telefono`}
             id={`${id}-telefono`}
           />
@@ -77,9 +82,10 @@ export const RegisterCompany = () => {
         <div className={styles.contenedorInput}>
           <Input
             label="Contraseña"
+            classLabel="labelRegistro"
             type="password"
             placeholder="Ingrese su contraseña"
-            className=""
+            classInput="inputRegistro"
             name={`${id}-password`}
             id={`${id}-password`}
           />
@@ -88,20 +94,21 @@ export const RegisterCompany = () => {
         <div className={styles.contenedorInput}>
           <Input
             label="Repetir contraseña"
+            classLabel="labelRegistro"
             type="password"
             placeholder="Repita su contraseña"
-            className=""
+            classInput="inputRegistro"
             name={`${id}-rep-password`}
             id={`${id}-rep-password`}
           />
         </div>
 
         <div className={styles.contenedorBoton}>
-          <button className="btn btn-danger">Registrarse</button>
+          <button className={`btn btn-danger ${styles.botonRegistrar}`}>Registrarse</button>
         </div>
       </form>
 
-      <div>
+      <div className={styles.contenedorTextoBajo}>
         <p>¿Ya tiene una cuenta? </p>
         <Link to={"/login-empresa"}>Inicia Sesión aquí</Link>
       </div>

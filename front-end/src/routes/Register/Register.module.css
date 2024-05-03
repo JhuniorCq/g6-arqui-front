@@ -1,0 +1,78 @@
+p, h1 {
+    margin-bottom: 0;
+}
+
+.contenedorRegistro {
+    /* border: 1px solid red; */
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 60px 0;
+}
+
+.contenedorTitulo {
+    text-align: center;
+    /* border: 1px solid green; */
+}
+
+.contenedorParrafo {
+    /* border: 1px solid yellow; */
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.formRegistro {
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-width: 500px;
+    margin-bottom: 15px;
+}
+
+.contenedorInput {
+    /* border: 1px solid orange; */
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.contenedorBoton {
+    width: 70%;
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    /* font-size: 1.1rem; */
+}
+
+.botonRegistrar {
+    width: 60%;
+    max-width: 200px;
+    min-width: 100px;
+    font-size: 1.1rem;
+    padding: 8px 0;
+  }
+
+.contenedorTextoBajo {
+    /* border: 1px solid fuchsia; */
+    text-align: center;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1.1rem;
+}
+
+.botonGoogle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 20px;
+}

@@ -2,9 +2,10 @@ import "./Input.css";
 
 export const Input = ({
   label,
+  classLabel,
   type,
   placeholder,
-  className,
+  classInput,
   name,
   id,
   onChange,
@@ -13,11 +14,11 @@ export const Input = ({
     <>
       {label ? (
         <>
-          <label htmlFor={id}>{label}</label>
+          <label htmlFor={id} className={classLabel}>{label}</label>
           <input
             type={type}
             placeholder={placeholder}
-            className={className}
+            className={classInput}
             name={name}
             id={id}
             onChange={onChange}
@@ -28,7 +29,7 @@ export const Input = ({
         <input
           type={type}
           placeholder={placeholder}
-          className={className}
+          className={classInput}
           name={name}
           id={id}
           onChange={onchange}
