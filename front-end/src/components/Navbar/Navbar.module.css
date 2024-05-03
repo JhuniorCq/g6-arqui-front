@@ -1,6 +1,6 @@
 .header {
   background-color: #071c33;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.6);
   height: 75px;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@
   align-items: center;
   list-style-type: none;
   margin: 0;
-  gap: 25px;
+  /* gap: 40px; */
 }
 
 .enlace {
@@ -23,12 +23,24 @@
   color: white;
 }
 
+.itemNavbar {
+  transition: scale 0.3s ease-in-out;
+}
+
+.itemNavbar:hover {
+  scale: 1.1;
+}
+
+.activo {
+  font-weight: 300;
+  text-shadow: 0 0 10px;
+  transition: all 0.2s ease-in-out;
+}
+
 /* Esta clase va para al <div> que contendrá a los Elementos que deben ir a la Izquierda -> Por ejemplo: El Logo */
 .leftItems {
   display: flex;
-  gap: 20px;
-  /* margin-left: 20px; */
-  /* border: 1px solid orange; */
+  gap: 40px;
 }
 
 /* Esta clase va para al <div> que contendrá a los Elementos que deben ir a la Derecha -> Por ejemplo: Registrarse, Inciar Sesión */
@@ -37,16 +49,8 @@
   gap: 20px;
   /* border: 1px solid yellow; */
   margin-left: auto;
-  margin-right: 30px;
+  margin-right: 35px;
 }
-
-/* .NavLink {
-  justify-content: right;
-}
-.derecha {
-  display: flex;
-  justify-content: flex-end;
-} */
 
 /* Estilos NavbarCompany */
 

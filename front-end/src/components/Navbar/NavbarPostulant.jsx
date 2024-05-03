@@ -39,7 +39,7 @@ export const NavbarPostulant = () => {
                 {/* <Input 
                   type="text" 
                   placeholder="Ingresa tu carrera"
-                  className= {styles.inputCarrera1}
+                  classInput= {styles.inputCarrera1}
                   name= {`${id}-busqueda`}
                   id= {`${id}-busqueda`}
                   onChange={manejarCambiosForm}

@@ -1,4 +1,3 @@
-
 .contenedorHome {
   display: flex;
   flex-direction: column;
@@ -28,15 +27,18 @@
   margin-left: 5%;
 }
 
-
-.input-name1, .input-dni , .input-domcilio,
-.input-profesion, .input-educacion,
-.input-intereses, .input-proyectos,
-.input-certificados{
-    border: none; 
-    outline: none; 
-    padding: 10px 15px;
-    font-size: 1.1rem;
+.input-name1,
+.input-dni,
+.input-domcilio,
+.input-profesion,
+.input-educacion,
+.input-intereses,
+.input-proyectos,
+.input-certificados {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 1.1rem;
 }
 
 .Tabladatos {
@@ -82,7 +84,6 @@
   width: 60%;
 }
 
-
 .checkboxContent {
   display: flex;
   align-items: center;
@@ -99,6 +100,12 @@
   margin-bottom: 10px;
   margin-left: 10%;
   width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 400;
+  transition: background-color 0.6s ease-in-out;
 }
 .btnConfi1 {
   background-color: #32bc1b;
@@ -109,9 +116,19 @@
   margin-bottom: 10px;
   margin-left: 42%;
   width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 400;
+  transition: background-color 0.3s ease-in-out;
 }
-btnContainer{
+btnContainer {
   width: 40%;
+}
+
+.btnConfi:hover, .btnConfi1:hover {
+  background-color: #2d981a;
 }
 
 .contenedorCam {
@@ -121,11 +138,11 @@ btnContainer{
   gap: 25px;
 }
 
-parte1{
+parte1 {
   width: 50%;
   float: left;
 }
-parte2{
+parte2 {
   width: 40%;
   float: right;
 }

@@ -10,26 +10,31 @@ export const NavbarCompany = () => {
 
   return (
     <header className={styles.header}>
-      <nav>
+      <nav className={styles.nav}>
         <ul className={styles.lista}>
-          {/* De ahí cambio este ESTILO */}
-          <li style={{color: "white"}}>
-            {/* <Link to="/" className={styles.enlace}> */}
-              Logo
-            {/* </Link> */}
-          </li>
-          <li>
-            <NavLink to="/publicar-ofertas" className={({ isActive }) => isActive ? `${styles.activo} ${styles.enlace}`: `${styles.enlace}`}>Publicar Oferta</NavLink>
-          </li>
-          <li>
-            <NavLink to="/mis-publicaciones" className={({ isActive }) => isActive ? `${styles.activo} ${styles.enlace}`: `${styles.enlace}`}>Mis Publicaciones</NavLink>
-          </li>
-          <li>
-            <Dropdown 
-              userOptions={true}
-              nombre={user.name}
-            />
-          </li>
+          <div className={styles.leftItems}>
+            {/* De ahí cambio este ESTILO */}
+            <li style={{color: "white"}}>
+              <Link to="/publicar-ofertas" className={styles.enlace}>
+                Logo
+              </Link>
+            </li>
+            <li className={styles.itemNavbar}>
+              <NavLink to="/publicar-ofertas" className={({ isActive }) => isActive ? `${styles.activo} ${styles.enlace}`: `${styles.enlace}`}>Publicar Oferta</NavLink>
+            </li>
+            <li className={styles.itemNavbar}>
+              <NavLink to="/mis-publicaciones" className={({ isActive }) => isActive ? `${styles.activo} ${styles.enlace}`: `${styles.enlace}`}>Mis Publicaciones</NavLink>
+            </li>
+          </div>
+
+          <div className={styles.rightItems}>
+            <li>
+              <Dropdown 
+                userOptions={true}
+                nombre={user.name}
+              />
+            </li>
+          </div>
         </ul>
       </nav>
     </header>

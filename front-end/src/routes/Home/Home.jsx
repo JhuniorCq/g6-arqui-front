@@ -27,7 +27,7 @@ export const Home = () => {
             label={null}
             type='text'
             placeholder='Ingresa tu Carrera'
-            className='inputCarrera anchoTotal'
+            classInput='inputCarrera anchoTotal'
           />
         </div>
 
