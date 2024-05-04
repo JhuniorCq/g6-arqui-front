@@ -79,10 +79,9 @@
 
 .content p {
   margin-left: 5px;
-}
-.content p {
   width: 60%;
 }
+
 
 .checkboxContent {
   display: flex;
@@ -136,13 +135,4 @@ btnContainer {
   flex-direction: column;
   align-items: center;
   gap: 25px;
-}
-
-parte1 {
-  width: 50%;
-  float: left;
-}
-parte2 {
-  width: 40%;
-  float: right;
 }
