@@ -13,7 +13,7 @@ export const ConfiguracionCompany = () => {
       <div className={styles.contenedorTitulo1}>
         <h2 className={styles.titulo2}> Datos de la Empresa</h2>
       </div>
-      <div className={styles.Tabladatos}>
+      <form className={styles.Tabladatos}>
         <table className="table">
           <tbody>
             <tr>
@@ -77,9 +77,9 @@ export const ConfiguracionCompany = () => {
           <IoIosSave />
           Guardar
         </button>
-      </div>
+      </form>
 
-      <div className={`container ${styles.contenedorCam}`}>
+      <form className={`container ${styles.contenedorCam}`}>
         <div className={styles.contenedorTitulo1}>
           <h3 className={styles.titulo1}>Modificar e-mail y clave</h3>
         </div>
@@ -104,7 +104,8 @@ export const ConfiguracionCompany = () => {
             </div>
           </div>
         </div>
-
+      </form>
+      <form className={`container ${styles.contenedorCam}`}>
         <div className={styles.contenedorTitulo1}>
           <h3 className={styles.titulo1}>Eliminar cuenta</h3>
         </div>
@@ -130,7 +131,7 @@ export const ConfiguracionCompany = () => {
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
