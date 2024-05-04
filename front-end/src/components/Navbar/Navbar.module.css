@@ -51,6 +51,13 @@
   margin-left: auto;
   margin-right: 35px;
 }
+.centerItems {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos verticalmente */
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Estilos NavbarCompany */
 
@@ -58,33 +65,29 @@
 .busque {
   display: flex;
   align-items: center;
-  margin-right: 500px;
+  margin-bottom: 10px;
 }
 
-.contenedor-input1,
-.contenedor-select1 {
-  margin-right: 20px;
+.form {
+  display: flex;
+  align-items: center;
+}
+.searchButton {
+  margin-right: 5px; 
 }
 
-.inputCarrera1,
-.input-lugar1 {
+.inputLugar1 {
+  width: 40%;
+  border-radius: 10px;
+  height: 40px;
+  padding-right: 40px;
+  margin-right: 5px;
+}
+.inputCarrera1 {
+  padding-right: 40px;
   width: 100%;
   border-radius: 10px;
   height: 40px;
-}
-.input-carrera1 {
-  padding-right: 40px;
-}
-
-.iconoBoton {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
-  background-image: url("/img/buscar.png");
-  background-size: cover;
-  border: none;
-  cursor: pointer;
+  margin-right: 5px;
+  margin-left: -400px;
 }
