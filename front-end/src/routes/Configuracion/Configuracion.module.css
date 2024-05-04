@@ -136,3 +136,7 @@ btnContainer {
   align-items: center;
   gap: 25px;
 }
+
+input[type="file"] {
+  display: none;
+}
