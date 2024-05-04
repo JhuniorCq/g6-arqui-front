@@ -64,7 +64,7 @@ export const NavbarPostulant = () => {
                 </button>
                 {/* <Link onClick={mifuncion} to="/" className={styles.iconoBoton}></Link> */}
                 <select
-                  name="{`${id}-select`}"
+                  name={`${id}-select`}
                   id={`${id}-select`}
                   className={styles.inputLugar1}
                 >
