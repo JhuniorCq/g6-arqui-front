@@ -3,6 +3,8 @@
 
 export const PublishOffer = () => {
     return (
-        <div>PUBLICAR OFERTA</div>
+        <div>
+            PUBLICAR OFERTA
+        </div>
     );
 };

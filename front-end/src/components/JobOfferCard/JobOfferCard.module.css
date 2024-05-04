@@ -1,0 +1,58 @@
+.contenedorCard {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 25px 30px;
+    width: 90%;
+    gap: 7px;
+    cursor: pointer;
+    transition: scale 0.3s ease-in-out;
+}
+
+.contenedorCard:hover {
+    scale: 1.03;
+}
+
+.contenedorCard > * {
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.terceraFila > p {
+    display: flex;
+    align-items: center;
+}
+
+.calificacion {
+    margin-right: 5px;
+}
+
+.nombreEmpresa {
+    margin-right: 10px;
+}
+
+.textoVerde {
+    color: green;
+}
+
+.textoAmarillo {
+    color: yellow;
+}
+
+.textoRojo {
+    color: red;
+}
+
+.fontWeight400 {
+    font-weight: 400;
+}
+
+.fontItalic {
+    font-style: italic;
+}

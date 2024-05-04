@@ -1,0 +1,147 @@
+.fontWeight {
+    font-weight: bold;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.alignItemsCenter {
+    align-items: center;
+}
+
+.gap20px {
+    gap: 20px;
+}
+
+.fontItalic {
+    font-style: italic;
+}
+
+.contenedorFiltros {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-evenly;
+    padding: 35px 0 0;
+}
+
+.contenedorFiltros > select {
+    width: 200px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.contenedorPrincipal {
+    /* border: 1px solid yellow; */
+    display: flex;
+    padding: 40px 0;
+}
+
+.contenedorOfertasEmpleo {
+    /* border: 1px solid blue; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contenedorNumeroOfertas {
+    width: 90%;
+    border: 1px solid orange;
+    padding: 25px 30px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.contenedorDetallesOferta {
+    /* border: 1px solid green; */
+    width: 50%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.detalleOferta {
+    width: 90%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 25px 35px;
+    gap: 12px;
+}
+
+/* .detalleOferta > * {
+    border: 1px solid red;
+} */
+
+.segundaFila {
+    display: flex;
+    justify-content: space-between;
+}
+
+.segundaFila > p {
+    display: flex;
+    align-items: center;
+}
+
+.logoEmpresa {
+    width: 70px;
+    height: auto;
+    cursor: pointer;
+    transition: scale 0.3s ease-in-out;
+}
+
+.logoEmpresa:hover {
+    scale: 1.2;
+}
+
+.calificacion {
+    margin-right: 5px;
+}
+
+.nombreEmpresa {
+    margin-right: 10px;
+    cursor: pointer;
+    transition: font-weight 0.3s ease-in-out;
+    transition: font-style 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.nombreEmpresa:hover {
+    /* text-shadow: 0 0 2px rgba(0, 0, 0, 1); */
+    font-style: italic;
+    color: rgb(0, 0, 145);
+    font-size: 1.1rem;
+    font-weight: 400;
+    /* scale: 1; */
+}
+
+.fontWeight400 {
+    font-weight: 400;
+}
+
+.cajaBoton {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.botonPostular {
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    min-width: 150px;
+    width: 40%;
+}

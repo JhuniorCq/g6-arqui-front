@@ -21,6 +21,8 @@
 .enlace {
   text-decoration: none;
   color: white;
+  transition: font-weight 0.2s ease-in-out;
+  transition: text-shadow 0.2s ease-in-out;
 }
 
 .itemNavbar {
@@ -33,8 +35,8 @@
 
 .activo {
   font-weight: 300;
-  text-shadow: 0 0 10px;
-  transition: all 0.2s ease-in-out;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+  
 }
 
 /* Esta clase va para al <div> que contendrá a los Elementos que deben ir a la Izquierda -> Por ejemplo: El Logo */
