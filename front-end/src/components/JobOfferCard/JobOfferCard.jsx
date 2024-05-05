@@ -3,9 +3,9 @@ import { HiDotsVertical } from "react-icons/hi";
 import { PiSealCheckFill } from "react-icons/pi";
 import { FaStar } from "react-icons/fa";
 
-export const JobOfferCard = ({ urgenciaOferta, tituloOferta, nombreEmpresa, calificacion, ubicacion, tiempoExistenciaOferta, onClick }) => {
+export const JobOfferCard = ({ urgenciaOferta, tituloOferta, nombreEmpresa, calificacion, ubicacion, tiempoExistenciaOferta, setState }) => {
   return (
-    <div className={styles.contenedorCard} onClick={onClick}>
+    <div className={styles.contenedorCard} onClick={setState}>
       <div className={styles.primeraFila}>
         <p className={`${styles.textoRojo} ${styles.fontWeight400}`}>{urgenciaOferta}</p>
         <HiDotsVertical />

@@ -13,6 +13,8 @@ export const JobOffers = () => {
   const { state } = location; // Esta propiedad "state" es propida del "location" -> En ella YO almacene a un Objeto de 2 propiedades
   const { idBusqueda, stateBusqueda } = state;
 
+  // Tal vez por acá uso un "useState" para GUARDAR como estado a -> stateBusqueda[idBusqueda] -> Ya que con el Navbar Postulante la BUSQUEDA se podrá ACTUALIZAR
+
   // ARRAY DE OBJETOS DE LAS OFERTAS DE EMPLEO (SIMULACIÓN)
   const ofertasTrabajoEjemplo = [
     {
@@ -116,7 +118,7 @@ export const JobOffers = () => {
                 calificacion={ofertaEmpleo.calificacion}
                 ubicacion={ofertaEmpleo.ubicacion}
                 tiempoExistenciaOferta={ofertaEmpleo.tiempoExistenciaOferta}
-                onClick={() => setStateOfertaDetalle(ofertaEmpleo)}
+                setState={() => setStateOfertaDetalle(ofertaEmpleo)}
                 idEmpresa={ofertaEmpleo.idEmpresa}
                />
             ))
