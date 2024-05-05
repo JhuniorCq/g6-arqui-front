@@ -14,6 +14,7 @@ import { Mypostulation} from "./routes/MyPostulation/MyPostulation";
 import { ConfiguracionPostulant } from "./routes/Configuracion/ConfiguracionPostulant";
 import { ConfiguracionCompany } from "./routes/Configuracion/ConfiguracionCompany";
 import { JobOffers } from "./routes/JobOffers/JobOffers";
+import { CompanyProfile } from "./routes/CompanyProfile/CompanyProfile";
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="/login-postulante" element={<Login titulo="Inicio de Sesión - Postulante" typeUser="postulante" />} />
         <Route path="/login-empresa"element={<Login titulo="Inicio de Sesión - Empresa" typeUser="empresa" />} />
         <Route path="/ofertas-empleo" element={<JobOffers />} />
+        <Route path="/perfil-empresa" element={<CompanyProfile />} />
         {/* Rutas para el Postulante */}
         <Route element={<ProtectedRoute redirectTo="/" isAllowed={!!user.id && user.rol.includes("postulant")} />}>
            <Route path="/configuracion-postulante" element={<ConfiguracionPostulant/>} />

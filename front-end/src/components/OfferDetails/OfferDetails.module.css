@@ -1,0 +1,101 @@
+.fontWeight {
+    font-weight: bold;
+}
+
+.fontWeight400 {
+    font-weight: 400;
+}
+
+.detalleOferta {
+    /* border: 1px solid red; */
+    width: 90%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 25px 35px;
+    gap: 12px;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.alignItemsCenter {
+    align-items: center;
+}
+
+.gap20px {
+    gap: 20px;
+}
+
+.fontItalic {
+    font-style: italic;
+}
+
+.logoEmpresa {
+    width: 70px;
+    height: auto;
+    cursor: pointer;
+    transition: scale 0.3s ease-in-out;
+}
+
+.logoEmpresa:hover {
+    scale: 1.2;
+}
+
+.calificacion {
+    margin-right: 5px;
+}
+
+.segundaFila {
+    display: flex;
+    justify-content: space-between;
+}
+
+.segundaFila > p {
+    display: flex;
+    align-items: center;
+}
+
+.nombreEmpresa {
+    margin-right: 10px;
+    cursor: pointer;
+    transition: font-weight 0.3s ease-in-out;
+    transition: font-style 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.nombreEmpresa:hover {
+    /* text-shadow: 0 0 2px rgba(0, 0, 0, 1); */
+    font-style: italic;
+    color: rgb(0, 0, 145);
+    font-size: 1.1rem;
+    font-weight: 400;
+    /* scale: 1; */
+}
+
+.enlace {
+    color: black;
+    text-decoration: none;
+}
+
+.cajaBoton {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.botonPostular {
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    min-width: 150px;
+    width: 40%;
+}
+
