@@ -1,18 +1,23 @@
-import { CareerCard } from "../../components/CareerCard/CareerCard";
+
 import { JobOfferCard } from "../../components/JobOfferCard/JobOfferCard";
-import { PiSealCheckFill } from "react-icons/pi";
-import { FaStar } from "react-icons/fa";
 import styles from "./JobOffers.module.css";
-import { BsDatabaseExclamation } from "react-icons/bs";
 // El logo deberá ser el valor de una Propiedad de los Objetos del Array de Ofertas de Empleo que traiga del back
 import logoEmpresa from "/img/logo-empresa.png";
 import { useEffect, useState } from "react";
+import { OfferDetails } from "../../components/OfferDetails/OfferDetails";
+import { useLocation } from "react-router-dom";
 
 export const JobOffers = () => {
 
+  const location = useLocation();
+  const { state } = location; // Esta propiedad "state" es propida del "location" -> En ella YO almacene a un Objeto de 2 propiedades
+  const { idBusqueda, stateBusqueda } = state;
+
+  // ARRAY DE OBJETOS DE LAS OFERTAS DE EMPLEO (SIMULACIÓN)
   const ofertasTrabajoEjemplo = [
     {
       id: 1,
+      idEmpresa: 11,
       urgenciaOferta: "Se precisa urgente",
       tituloOferta: "Practicante profesional en las carrera de Sistemas o Ingeniería de Software",
       nombreEmpresa: "Administración de Servicios red data SAC",
@@ -26,6 +31,7 @@ export const JobOffers = () => {
     },
     {
       id: 2,
+      idEmpresa: 12,
       urgenciaOferta: "Se precisa urgente",
       tituloOferta: "Practicante de Desarrollo Front-End",
       nombreEmpresa: "La Calera S.A.C.",
@@ -38,10 +44,11 @@ export const JobOffers = () => {
     },
     {
       id: 3,
+      idEmpresa: 13,
       urgenciaOferta: "Se precisa urgente",
       tituloOferta: "Analista QA",
       nombreEmpresa: "ORBIS VENTURES S.A.C.",
-      calificacion: "4.1",
+      calificacion: "4.7",
       cantPostulaciones: 103,
       ubicacion: "Lince, Lima",
       tiempoExistenciaOferta: "Hace 3 días",
@@ -52,6 +59,7 @@ export const JobOffers = () => {
 
   const [stateOfertaDetalle, setStateOfertaDetalle] = useState(ofertasTrabajoEjemplo[0]);
 
+  // Este useEffect es para probar no más
   useEffect(() => {
     console.log(stateOfertaDetalle)
   }, [stateOfertaDetalle]);
@@ -92,9 +100,9 @@ export const JobOffers = () => {
           <div className={styles.contenedorNumeroOfertas}>
             <p>
               {/* Acá en vez de 432 irá el length del Array de Objetos "Ofertas Trabajo" que brinde el back */}
-              <span className={styles.fontWeight}>432</span> Ofertas de trabajo
+              <span className={styles.fontWeight}>{ofertasTrabajoEjemplo.length}</span> Ofertas de trabajo
               de{" "}
-              <span className={styles.fontWeight}>Ingeniería de Software</span>
+              <span className={styles.fontWeight}>{stateBusqueda[idBusqueda]}</span>
             </p>
           </div>
 
@@ -109,56 +117,23 @@ export const JobOffers = () => {
                 ubicacion={ofertaEmpleo.ubicacion}
                 tiempoExistenciaOferta={ofertaEmpleo.tiempoExistenciaOferta}
                 onClick={() => setStateOfertaDetalle(ofertaEmpleo)}
+                idEmpresa={ofertaEmpleo.idEmpresa}
                />
             ))
           }
 
         </div>
         {/* Segunda Columna */}
-        {/* Si convierto todo esto en un Componente, cómo le paso los estilos, uno por uno sería feo */}
         <div className={styles.contenedorDetallesOferta}>
-          <div className={`${styles.detalleOferta} ${styles.flexColumn}`}>
-            <div className={`${styles.flexRow} ${styles.alignItemsCenter} ${styles.gap20px}`}>
-              <h1 className={styles.fontItalic}>
-                {stateOfertaDetalle.tituloOferta}
-              </h1>
-              <img src={logoEmpresa} alt={`Logo de ${stateOfertaDetalle.tituloOferta}`} className={styles.logoEmpresa} />
-            </div>
-
-            <div className={styles.segundaFila}>
-              <p>
-                <span
-                  className={`${styles.calificacion} ${styles.fontWeight400}`}
-                >
-                  {stateOfertaDetalle.calificacion}
-                </span>
-                <FaStar style={{ color: "yellow" }} />
-              </p>
-              <p>
-                <span className={styles.nombreEmpresa}>
-                  {stateOfertaDetalle.nombreEmpresa}
-                </span>
-                <PiSealCheckFill style={{ color: "blue" }} />
-              </p>
-            </div>
-
-            <p className={styles.fontWeight400}>{stateOfertaDetalle.cantPostulaciones} Postulaciones</p>
-
-            <p className={styles.fontWeight}>{stateOfertaDetalle.ubicacion}</p>
-
-            <p>{stateOfertaDetalle.tiempoExistenciaOferta}</p>
-
-            <div className={styles.cajaBoton}>
-              <button className={`btn btn-success ${styles.botonPostular}`}>Postularme</button>
-            </div>
-            <hr />
-
-            <div>
-              <p>
-                {stateOfertaDetalle.mensajeOferta}
-              </p>
-            </div>
-          </div>
+          <OfferDetails 
+            tituloOferta={stateOfertaDetalle.tituloOferta}
+            calificacion={stateOfertaDetalle.calificacion}
+            nombreEmpresa={stateOfertaDetalle.nombreEmpresa}
+            cantPostulaciones={stateOfertaDetalle.cantPostulaciones}
+            ubicacion={stateOfertaDetalle.ubicacion}
+            tiempoExistenciaOferta={stateOfertaDetalle.tiempoExistenciaOferta}
+            mensajeOferta={stateOfertaDetalle.mensajeOferta}  
+          />
         </div>
       </div>
     </div>

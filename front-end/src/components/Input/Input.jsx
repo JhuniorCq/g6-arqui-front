@@ -32,7 +32,7 @@ export const Input = ({
           className={classInput}
           name={name}
           id={id}
-          onChange={onchange}
+          onChange={onChange}
           required
         />
       )}
