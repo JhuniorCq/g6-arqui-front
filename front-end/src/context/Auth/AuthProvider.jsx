@@ -15,11 +15,11 @@ export const AuthProvider = ({ children }) => {
 
         // Eso de envio de dastos al back lo haré con usePost, asi que creo que acá solo es necesario recibir como parámetro el Objeto con los Datos de Usuario (es decir a responsePost) y luego DESESTRUCTURAMOS a ese Objeto
 
-         // Los roles son: "postulant" y "company"
-        setUser({
+        // Los roles son: "APPLICANT" y "COMPANY" -> CAMBIAR use.rol en todas sus apariciones
+        setUser({   
             id: 1,
             name: "Jhunior Ccora",
-            rol: ["postulant"]
+            rol: ["COMPANY"]
         });
     };
 

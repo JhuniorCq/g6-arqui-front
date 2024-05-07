@@ -35,10 +35,10 @@ export const Login = ({ titulo, typeUser }) => {
     });
 
     //Llamo a axiosPost para enviar los datos al back / Como axiosPost está comentado se mostrará "Cargando..." indefinidamente
-    // const { responsePost, loadingPost, errorPost } = axiosPost(URL, {});
+    //axiosPost(URL, {});
 
     // Si las credenciales son válidas -> llamamos a la Función "login" del Contexto Auth y le pasamos como argumento a "responsePost" -> login(responsePost)
-    login();
+    login(/*responsePost*/);
   };
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export const Login = ({ titulo, typeUser }) => {
     // Esta condicional es para que NO se ejecute el alert y el navigate en el PRIMER RENDERIZADO del Componente "Login"
     if(user.id) { 
       alert("Inicio de Sesión Exitoso");
-      user.rol.includes("postulant") ? navigate("/"): user.rol.includes("company") ? navigate("/publicar-ofertas"): alert("Ha ocurrido un ERROR");
+      user.rol.includes("APPLICANT") ? navigate("/"): user.rol.includes("COMPANY") ? navigate("/publicar-ofertas"): alert("Ha ocurrido un ERROR");
     }
   }, [user]);
 
