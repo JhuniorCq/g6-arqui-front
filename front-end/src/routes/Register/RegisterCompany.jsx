@@ -57,6 +57,18 @@ export const RegisterCompany = () => {
 
         <div className={styles.contenedorInput}>
           <Input
+            label="Nombre de la Empresa"
+            classLabel="labelRegistro"
+            type="text"
+            placeholder="Empresa S.A.C."
+            classInput="inputRegistro"
+            name={`${id}-nombre-empresa`}
+            id={`${id}-nombre-empresa`}
+          />
+        </div>
+
+        <div className={styles.contenedorInput}>
+          <Input
             label="RUC"
             classLabel="labelRegistro"
             type="text"

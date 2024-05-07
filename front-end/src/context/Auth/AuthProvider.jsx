@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
         // Envío de datos al back para la Autenticación -> El back me envía una Respuesta
         // Actualizamos el ESTADO "user" con la Respuesta enviada desde el back
 
-        // Eso de enviio de dastos al back lo haré con usePost, asi que creo que acá solo es necesario recibir como parámetro el Objeto con los Datos de Usuario (es decir a responsePost) y luego DESESTRUCTURAMOS a ese Objeto
+        // Eso de envio de dastos al back lo haré con usePost, asi que creo que acá solo es necesario recibir como parámetro el Objeto con los Datos de Usuario (es decir a responsePost) y luego DESESTRUCTURAMOS a ese Objeto
 
          // Los roles son: "postulant" y "company"
         setUser({
