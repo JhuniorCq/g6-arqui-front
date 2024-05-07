@@ -11,10 +11,10 @@ export const usePost = () => { //Si hay un Error por pasar la URL desde acá -> 
 
     const axiosPost = async (url="", payload) => {
         try {
-            const response = await axios.post(url, payload);
-
+            const { data } = await axios.post(url, payload);
+            console.log(data);
             setStatePost({
-                responsePost: response.data,
+                responsePost: data,
                 loadingPost: false,
                 errorPost: null
             });

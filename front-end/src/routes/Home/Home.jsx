@@ -45,6 +45,7 @@ export const Home = () => {
         </p>
       </div>
 
+      {/* Acá tal vez pueda usar el Componente JobOfferSearch */}
       <form className={styles.formulario} onSubmit={enviarForm}>
         <div className={styles.contenedorInput}>
           <Input
@@ -75,9 +76,7 @@ export const Home = () => {
         </div>
 
         <div className={styles.contenedorBoton}>
-          {/* Estoy agregando un useNavigate para acceder a ofertar de empleo */}
           <button
-            // onClick={() => navigate("/ofertas-empleo")}
             className={`btn btn-danger anchoTotal ${styles.btnBuscar}`}
           >
             Buscar Prácticas

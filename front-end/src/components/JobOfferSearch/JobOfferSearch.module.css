@@ -1,0 +1,34 @@
+.formulario {
+  /* border: 1px solid blue; */
+  border: none;
+  border-radius: 7px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+  gap: 30px;
+  margin: 20px 0 60px;
+}
+
+.contenedorInput {
+  flex-grow: 3;
+}
+
+.contenedorSelect {
+  flex-grow: 1;
+}
+
+.inputLugar {
+    /* width: 100%; */
+    padding: 10px 15px;
+    outline: none;
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 4px;
+    font-size: 1.1rem;
+  }
+  
+  .contenedorBoton {
+    flex-grow: 1;
+  }

@@ -2,15 +2,18 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { AuthContext } from "../../context/Auth/AuthContext";
-import { useContext, useId, useRef } from "react";
+import { useContext, useId } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useForm } from "../../hooks/useForm";
 import { Input } from "../Input/Input";
+
 export const NavbarPostulant = () => {
   const authContext = useContext(AuthContext);
   const { user } = authContext;
+
   const id = useId();
   const navigate = useNavigate();
+  
   //Funcion para validar que el input de busqueda tenga un texto (probando la funcion)
   const { manejarCambiosForm, state } = useForm({
     [`${id}-busqueda`]: "hh",
@@ -28,13 +31,13 @@ export const NavbarPostulant = () => {
       <nav className={styles.nav}>
         <ul className={styles.lista}>
           <div className={styles.leftItems}>
-            {/* De ahí cambio este ESTILO */}
             <li>
-              <Link to="/publicar-ofertas" className={styles.enlace}>
+              <Link to="/" className={styles.enlace}>
                 Logo
               </Link>
             </li>
           </div>
+          {/* Para quitar el Buscador del Nav sería borrar todo el FORM */}
           <form className={styles.centerItems}>
             <li className={styles.busque}>
               <form onSubmit={mifuncion} className={styles.form}>

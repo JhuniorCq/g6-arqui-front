@@ -47,10 +47,6 @@
   flex-grow: 1;
 }
 
-.fontBlack {
-  color: black;
-}
-
 .inputLugar {
   /* width: 100%; */
   padding: 10px 15px;
@@ -69,6 +65,10 @@
   padding: 10px 15px;
   outline: none;
   font-size: 1.1rem;
+}
+
+.fontBlack {
+  color: black;
 }
 
 .contenedorCarreras {

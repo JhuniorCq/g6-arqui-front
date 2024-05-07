@@ -20,7 +20,7 @@ export const Login = ({ titulo, typeUser }) => {
     [`${id}-password`]: "",
   });
 
-  const URL = typeUser === "postulante" ? '': '';
+  const URL = typeUser === "postulante" ? '': 'https://practicasya-api.onrender.com/api/public/login';
 
   const { axiosPost, statePost, setStatePost } = usePost(); // Acá le paso como parámetro una URL del back
   const { responsePost, loadingPost, errorPost } = statePost;
@@ -35,8 +35,14 @@ export const Login = ({ titulo, typeUser }) => {
     });
 
     //Llamo a axiosPost para enviar los datos al back / Como axiosPost está comentado se mostrará "Cargando..." indefinidamente
-    //axiosPost(URL, {});
+        // Dato: el username "admin" con password "admin" es un Usuario por Defecto que tiene acceso a todas las funcionalidades
+    // axiosPost(URL, {
+    //   username: "admin",
+    //   password: "admin"
+    // });
 
+
+    //CREO que esta Función Login irá dentro del useEffect
     // Si las credenciales son válidas -> llamamos a la Función "login" del Contexto Auth y le pasamos como argumento a "responsePost" -> login(responsePost)
     login(/*responsePost*/);
   };
