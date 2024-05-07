@@ -1,0 +1,18 @@
+.contenedorHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 70px 0;
+  }
+
+  .Tabladatos {
+    width: 77%;
+    margin: 20px auto 60px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+  }
