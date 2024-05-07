@@ -21,7 +21,7 @@ export const NavbarPostulant = () => {
     const valorBusqueda = state[`${id}-busqueda`];
     valorBusqueda
       ? navigate("/ofertas-empleo")
-      : alert("Ingrese una busqueda ps sonso");
+      : alert("Ingrese una busqueda ");
   };
   return (
     <header className={styles.header}>
@@ -35,7 +35,7 @@ export const NavbarPostulant = () => {
               </Link>
             </li>
           </div>
-          <div className={styles.centerItems}>
+          <form className={styles.centerItems}>
             <li className={styles.busque}>
               <form onSubmit={mifuncion} className={styles.form}>
                 {/* Es el className para el input className=
@@ -77,7 +77,7 @@ export const NavbarPostulant = () => {
                 </select>
               </form>
             </li>
-          </div>
+          </form>
 
           <div className={styles.rightItems}>
             <li>
