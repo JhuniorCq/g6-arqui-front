@@ -21,14 +21,14 @@
 }
 
 .inputLugar {
-    /* width: 100%; */
-    padding: 10px 15px;
-    outline: none;
-    border: 1px solid rgb(151, 151, 151);
-    border-radius: 4px;
-    font-size: 1.1rem;
-  }
-  
-  .contenedorBoton {
-    flex-grow: 1;
-  }
+  /* width: 100%; */
+  padding: 10px 15px;
+  outline: none;
+  border: 1px solid rgb(151, 151, 151);
+  border-radius: 4px;
+  font-size: 1.1rem;
+}
+
+.contenedorBoton {
+  flex-grow: 1;
+}

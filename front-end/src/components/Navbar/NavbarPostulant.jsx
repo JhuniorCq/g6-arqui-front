@@ -16,7 +16,7 @@ export const NavbarPostulant = () => {
   
   //Funcion para validar que el input de busqueda tenga un texto (probando la funcion)
   const { manejarCambiosForm, state } = useForm({
-    [`${id}-busqueda`]: "hh",
+    [`${id}-busqueda`]: "",
   });
   const mifuncion = (event) => {
     event.preventDefault();
@@ -24,8 +24,9 @@ export const NavbarPostulant = () => {
     const valorBusqueda = state[`${id}-busqueda`];
     valorBusqueda
       ? navigate("/ofertas-empleo")
-      : alert("Ingrese una busqueda ");
+      : alert("Ingrese una busqueda");
   };
+  
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -38,7 +39,7 @@ export const NavbarPostulant = () => {
             </li>
           </div>
           {/* Para quitar el Buscador del Nav sería borrar todo el FORM */}
-          <form className={styles.centerItems}>
+          {/* <form className={styles.centerItems}> */}
             <li className={styles.busque}>
               <form onSubmit={mifuncion} className={styles.form}>
                 {/* Es el className para el input className=
@@ -62,7 +63,7 @@ export const NavbarPostulant = () => {
                   className={styles.inputCarrera1}
                   onChange={manejarCambiosForm}
                 />
-                <button type="submit" className={styles.searchButton}>
+                <button className={styles.searchButton}>
                   <FaSearch />
                 </button>
                 {/* <Link onClick={mifuncion} to="/" className={styles.iconoBoton}></Link> */}
@@ -80,7 +81,7 @@ export const NavbarPostulant = () => {
                 </select>
               </form>
             </li>
-          </form>
+          {/* </form> */}
 
           <div className={styles.rightItems}>
             <li>
