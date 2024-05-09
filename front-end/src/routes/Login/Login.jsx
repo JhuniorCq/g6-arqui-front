@@ -61,7 +61,7 @@ export const Login = ({ titulo, typeUser }) => {
   useEffect(() => {
     if(user.isExisting) {
       console.log("Este usuario existe", user)
-      alert("Inicio de Sesión Exitoso");
+      // alert("Inicio de Sesión Exitoso");
       user.roles.includes("APPLICANT") ? navigate("/"): user.roles.includes("COMPANY") ? navigate("/publicar-ofertas"): alert("Ha ocurrido un ERROR");
     }
   }, [user]);
