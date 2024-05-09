@@ -10,10 +10,16 @@ import { FaSearch } from "react-icons/fa";
 import { JobOfferSearch } from "../../components/JobOfferSearch/JobOfferSearch";
 
 export const JobOffers = () => {
-  const id = useId();
-  const location = useLocation();
-  const { state } = location; // Esta propiedad "state" es propida del "location" -> En ella YO almacene a un Objeto de 2 propiedades
-  const { idBusqueda, stateBusqueda } = state;
+  
+  // Si la propiedad "state" EXISTE quiere decir que se está accediendo a JobOffers desde el Buscador del Home
+  const { state: previousRouteData } = useLocation();
+  let idBusqueda, stateBusqueda;
+
+  if (previousRouteData) {
+    console.log("Estoy en JobOffer y el previousRouteData es: ", previousRouteData)
+    idBusqueda = previousRouteData.idBusqueda;
+    stateBusqueda = previousRouteData.stateBusqueda;
+  }
 
   // Tal vez por acá uso un "useState" para GUARDAR como estado a -> stateBusqueda[idBusqueda] -> Ya que con el Navbar Postulante la BUSQUEDA se podrá ACTUALIZAR
 
@@ -73,11 +79,6 @@ export const JobOffers = () => {
 
   return (
     <div className="">
-      {/* Este FORM del BUSCADOR, lo puedo convertir en un Componente y reutilizarlo en el Home también */}
-      <div>
-        <JobOfferSearch />
-      </div>
-
       <div className={styles.contenedorFiltros}>
         <select name="" id="" className={`${styles.fontWeight400}`}>
           <option value="">Fecha</option>
@@ -106,49 +107,52 @@ export const JobOffers = () => {
         </select>
       </div>
 
-      <div className={styles.contenedorPrincipal}>
-        {/* Primera Columna */}
-        <div className={styles.contenedorOfertasEmpleo}>
-          <div className={styles.contenedorNumeroOfertas}>
-            <p>
-              {/* Acá en vez de 432 irá el length del Array de Objetos "Ofertas Trabajo" que brinde el back */}
-              <span className={styles.fontWeight}>
-                {ofertasTrabajoEjemplo.length}
-              </span>{" "}
-              Ofertas de trabajo de{" "}
-              <span className={styles.fontWeight}>
-                {stateBusqueda[idBusqueda]}
-              </span>
-            </p>
-          </div>
+      {previousRouteData ? (
+        <div className={styles.contenedorPrincipal}>
+          {/* Primera Columna */}
+          <div className={styles.contenedorOfertasEmpleo}>
+            <div className={styles.contenedorNumeroOfertas}>
+              <p>
+                <span className={styles.fontWeight}>
+                  {ofertasTrabajoEjemplo.length}
+                </span>{" "}
+                Ofertas de trabajo de{" "}
+                <span className={styles.fontWeight}>
+                  {stateBusqueda[idBusqueda]}
+                </span>
+              </p>
+            </div>
 
-          {ofertasTrabajoEjemplo.map((ofertaEmpleo) => (
-            <JobOfferCard
-              key={ofertaEmpleo.id}
-              urgenciaOferta={ofertaEmpleo.urgenciaOferta}
-              tituloOferta={ofertaEmpleo.tituloOferta}
-              nombreEmpresa={ofertaEmpleo.nombreEmpresa}
-              calificacion={ofertaEmpleo.calificacion}
-              ubicacion={ofertaEmpleo.ubicacion}
-              tiempoExistenciaOferta={ofertaEmpleo.tiempoExistenciaOferta}
-              setState={() => setStateOfertaDetalle(ofertaEmpleo)}
-              idEmpresa={ofertaEmpleo.idEmpresa}
+            {ofertasTrabajoEjemplo.map((ofertaEmpleo) => (
+              <JobOfferCard
+                key={ofertaEmpleo.id}
+                urgenciaOferta={ofertaEmpleo.urgenciaOferta}
+                tituloOferta={ofertaEmpleo.tituloOferta}
+                nombreEmpresa={ofertaEmpleo.nombreEmpresa}
+                calificacion={ofertaEmpleo.calificacion}
+                ubicacion={ofertaEmpleo.ubicacion}
+                tiempoExistenciaOferta={ofertaEmpleo.tiempoExistenciaOferta}
+                setState={() => setStateOfertaDetalle(ofertaEmpleo)}
+                idEmpresa={ofertaEmpleo.idEmpresa}
+              />
+            ))}
+          </div>
+          {/* Segunda Columna */}
+          <div className={styles.contenedorDetallesOferta}>
+            <OfferDetails
+              tituloOferta={stateOfertaDetalle.tituloOferta}
+              calificacion={stateOfertaDetalle.calificacion}
+              nombreEmpresa={stateOfertaDetalle.nombreEmpresa}
+              cantPostulaciones={stateOfertaDetalle.cantPostulaciones}
+              ubicacion={stateOfertaDetalle.ubicacion}
+              tiempoExistenciaOferta={stateOfertaDetalle.tiempoExistenciaOferta}
+              mensajeOferta={stateOfertaDetalle.mensajeOferta}
             />
-          ))}
+          </div>
         </div>
-        {/* Segunda Columna */}
-        <div className={styles.contenedorDetallesOferta}>
-          <OfferDetails
-            tituloOferta={stateOfertaDetalle.tituloOferta}
-            calificacion={stateOfertaDetalle.calificacion}
-            nombreEmpresa={stateOfertaDetalle.nombreEmpresa}
-            cantPostulaciones={stateOfertaDetalle.cantPostulaciones}
-            ubicacion={stateOfertaDetalle.ubicacion}
-            tiempoExistenciaOferta={stateOfertaDetalle.tiempoExistenciaOferta}
-            mensajeOferta={stateOfertaDetalle.mensajeOferta}
-          />
-        </div>
-      </div>
+      ) : (
+        <div>INGRESE ALGO PARA BUSCAR :3</div>
+      )}
     </div>
   );
 };

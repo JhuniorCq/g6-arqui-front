@@ -3,30 +3,28 @@ import { Input } from "../Input/Input";
 import styles from "./JobOfferSearch.module.css";
 import { useId } from "react";
 
-export const JobOfferSearch = () => {
-
-  const id = useId();
+export const JobOfferSearch = ({ idPrefijo, enviarForm, manejarCambiosForm }) => {
 
   return (
-    <form className={styles.formulario}>
+    <form onSubmit={enviarForm} className={styles.formulario}>
       <div className={styles.contenedorInput}>
         <Input
           label={null}
           type="text"
           placeholder="Ingresa tu Carrera"
           classInput="inputCarrera anchoTotal"
-          name={`${id}-input-busqueda`}
-          id={`${id}-input-busqueda`}
-          onChange={``}
+          name={`${idPrefijo}-input-busqueda`}
+          id={`${idPrefijo}-input-busqueda`}
+          onChange={manejarCambiosForm}
         />
       </div>
 
       <div className={styles.contenedorSelect}>
         <select
-          name={`${id}-select-lugar`}
-          id={`${id}-select-lugar`}
+          name={`${idPrefijo}-select-lugar`}
+          id={`${idPrefijo}-select-lugar`}
           className={`anchoTotal ${styles.inputLugar}`}
-          onChange={``}
+          onChange={manejarCambiosForm}
         >
           <option value="">Lugar</option>
           <option value="Lima">Lima</option>
@@ -38,7 +36,9 @@ export const JobOfferSearch = () => {
       </div>
 
       <div className={styles.contenedorBoton}>
-        <FaSearch />
+        <button className={`btn btn-danger anchoTotal ${styles.btnBuscar}`}>
+          Buscar Prácticas
+        </button>
       </div>
     </form>
   );

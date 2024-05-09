@@ -6,6 +6,7 @@ import imgContabilidad from "/img/contabilidad.jpg";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useId } from "react";
+import { JobOfferSearch } from "../../components/JobOfferSearch/JobOfferSearch";
 
 export const Home = () => {
   const id = useId();
@@ -13,7 +14,7 @@ export const Home = () => {
 
   const { state, setState, manejarCambiosForm } = useForm({
     [`${id}-input-busqueda`]: "",
-    [`${id}-select-lugar`]: ""
+    [`${id}-select-lugar`]: "",
   });
 
   const enviarForm = (event) => {
@@ -26,8 +27,8 @@ export const Home = () => {
       state: {
         stateBusqueda: state,
         idBusqueda: `${id}-input-busqueda`
-      }
-    })
+      },
+    });
   };
 
   return (
@@ -46,7 +47,15 @@ export const Home = () => {
       </div>
 
       {/* Acá tal vez pueda usar el Componente JobOfferSearch */}
-      <form className={styles.formulario} onSubmit={enviarForm}>
+      <div className={`${styles.contenedorBuscador} anchoTotal`}>
+        <JobOfferSearch
+          idPrefijo={id}
+          enviarForm={enviarForm}
+          manejarCambiosForm={manejarCambiosForm}
+        />
+      </div>
+
+      {/* <form className={styles.formulario} onSubmit={enviarForm}>
         <div className={styles.contenedorInput}>
           <Input
             label={null}
@@ -82,7 +91,7 @@ export const Home = () => {
             Buscar Prácticas
           </button>
         </div>
-      </form>
+      </form> */}
 
       <div className={styles.contenedorCarreras}>
         <CareerCard rutaImg={imgIngSoftware} carrera="Ingeniería de Software" />

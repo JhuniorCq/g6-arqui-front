@@ -9,9 +9,9 @@ export const Navbar = () => {
   const authContext = useContext(AuthContext);
   const { user } = authContext;
 
-  return user.rol.includes("APPLICANT") ? (
+  return user.roles.includes("APPLICANT") ? (
     <NavbarPostulant />
-  ) : user.rol.includes("COMPANY") ? (
+  ) : user.roles.includes("COMPANY") ? (
     <NavbarCompany />
   ) : (
     <NavbarNoLogin />

@@ -1,5 +1,5 @@
 .formulario {
-  /* border: 1px solid blue; */
+  border: 1px solid yellow;
   border: none;
   border-radius: 7px;
   width: 80%;
@@ -9,7 +9,7 @@
   padding: 15px 25px;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
   gap: 30px;
-  margin: 20px 0 60px;
+  /* margin: 20px 0 60px; */
 }
 
 .contenedorInput {
@@ -31,4 +31,11 @@
 
 .contenedorBoton {
   flex-grow: 1;
+}
+
+.btnBuscar {
+  /* width: 100%; */
+  padding: 10px 15px;
+  outline: none;
+  font-size: 1.1rem;
 }

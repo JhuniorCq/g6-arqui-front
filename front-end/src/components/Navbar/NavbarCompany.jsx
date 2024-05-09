@@ -31,7 +31,7 @@ export const NavbarCompany = () => {
             <li>
               <Dropdown 
                 userOptions={true}
-                nombre={user.name}
+                nombre={user.username}
               />
             </li>
           </div>
