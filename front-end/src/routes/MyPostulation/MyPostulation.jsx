@@ -6,6 +6,9 @@ import {  useState, useEffect } from "react";
 export const Mypostulation = () => {
   const personaId = 123;
   const [postulaciones, setPostulaciones] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+
 
   const simulacion = () => {
     const datosDePrueba = [
@@ -157,9 +160,19 @@ export const Mypostulation = () => {
     return datosDePrueba.slice();
   };
 
+
   useEffect(() => {
     setPostulaciones(simulacion());
   }, [personaId]);
+
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = postulaciones.slice(indexOfFirstItem, indexOfLastItem);
+
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
 
   return (
     <div className="contenedorHome">
@@ -192,19 +205,30 @@ export const Mypostulation = () => {
       <form className="Tabladatos">
         <table className="table">
           <tbody>
-            {postulaciones.map((postulacion) => (
+            {currentItems.map((postulacion) => (
               <tr key={postulacion.id}>
-                 <td>
-                  {postulacion.oferta} <br/> {postulacion.lugar}
+                <td>
+                  {postulacion.oferta} <br /> {postulacion.lugar}
                 </td>
                 <td>
-                <FaHandHoldingDollar />{postulacion.pago} <br/> <IoIosTime />{postulacion.estado}
+                  <FaHandHoldingDollar />
+                  {postulacion.pago} <br /> <IoIosTime />
+                  {postulacion.estado}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </form>
+
+
+      <div className="pagination">
+        {Array.from({ length: Math.ceil(postulaciones.length / itemsPerPage) }, (_, index) => (
+          <button key={index + 1} onClick={() => paginate(index + 1)}>
+            {index + 1}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
