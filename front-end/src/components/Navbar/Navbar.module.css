@@ -12,10 +12,13 @@
 
 .lista {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   list-style-type: none;
   margin: 0;
-  /* gap: 40px; */
+  /* border: 1px solid red;*/
+  padding-right: 2rem;
+  height: 100%;
 }
 
 .enlace {
@@ -42,54 +45,73 @@
 /* Esta clase va para al <div> que contendrá a los Elementos que deben ir a la Izquierda -> Por ejemplo: El Logo */
 .leftItems {
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  
+}
+
+.centerItems {
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Esta clase va para al <div> que contendrá a los Elementos que deben ir a la Derecha -> Por ejemplo: Registrarse, Inciar Sesión */
 .rightItems {
   display: flex;
-  gap: 20px;
-  /* border: 1px solid yellow; */
-  margin-left: auto;
-  margin-right: 35px;
-}
-.centerItems {
-  display: flex;
-  flex-direction: column; /* Alinea los elementos verticalmente */
+  justify-content: flex-end;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 30px;
+  flex-grow: 1;
 }
 
 /* Estilos NavbarCompany */
 
 /* Estilos NavbarPostulant */
-.busque {
+.formulario {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  gap: 1.6rem;
 }
 
-.form {
-  display: flex;
-  align-items: center;
-}
-.searchButton {
-  margin-right: 5px; 
+.contenedorInput {
+  flex-grow: 2;
 }
 
-.inputLugar1 {
-  width: 40%;
-  border-radius: 10px;
-  height: 40px;
-  padding-right: 40px;
-  margin-right: 5px;
+.inputCarrera {
+  padding: 7px 15px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
 }
-.inputCarrera1 {
-  padding-right: 40px;
-  width: 100%;
-  border-radius: 10px;
-  height: 40px;
-  margin-right: 5px;
-  margin-left: 0px;
+
+.contenedorSelect {
+  flex-grow: 2;
 }
+
+.inputLugar {
+  padding: 8px 15px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+
+.contenedorBoton {
+  flex-grow: 1;
+}
+
+.botonBuscar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+
+
+

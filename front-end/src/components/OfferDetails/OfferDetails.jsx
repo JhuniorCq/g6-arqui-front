@@ -14,7 +14,7 @@ export const OfferDetails = ({ tituloOferta, calificacion, nombreEmpresa, cantPo
   const { user } = authContext;
 
   const loginActivo = () => {
-    !!user.id ? alert("Su CV ha sido enviado exitosamente."): alert("Inicie Sesión antes de realizar esta acción.");
+    user.isExisting ? alert("Su CV ha sido enviado exitosamente."): alert("Inicie Sesión antes de realizar esta acción.");
   }
 
   return (

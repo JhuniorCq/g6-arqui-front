@@ -28,7 +28,7 @@ function App() {
       <Navbar />
       <Routes>
         {/* Se está protegiendo al Home para que el Usuario Empresa NO pueda acceder a él luego del Login */}
-        <Route element={<ProtectedRoute redirectTo="/publicar-ofertas" isAllowed={!(user.rol.includes("company"))} />}>
+        <Route element={<ProtectedRoute redirectTo="/publicar-ofertas" isAllowed={!(user.roles.includes("COMPANY"))} />}>
           <Route path="/" element={<Home />} />
         </Route>
         <Route path="/registro-postulante" element={<RegisterPostulant />} />
@@ -38,12 +38,12 @@ function App() {
         <Route path="/ofertas-empleo" element={<JobOffers />} />
         <Route path="/perfil-empresa" element={<CompanyProfile />} />
         {/* Rutas para el Postulante */}
-        <Route element={<ProtectedRoute redirectTo="/" isAllowed={!!user.id && user.rol.includes("postulant")} />}>
+        <Route element={<ProtectedRoute redirectTo="/" isAllowed={!!user.isExisting && user.roles.includes("APPLICANT")} />}>
            <Route path="/configuracion-postulante" element={<ConfiguracionPostulant/>} />
            <Route path="/mis-postulaciones" element={<Mypostulation />} />
         </Route>
         {/* Rutas para la Empresa */}
-        <Route element={<ProtectedRoute redirectTo="/" isAllowed={!!user.id && user.rol.includes("company")} />}>
+        <Route element={<ProtectedRoute redirectTo="/" isAllowed={!!user.isExisting && user.roles.includes("COMPANY")} />}>
           <Route path="/publicar-ofertas" element={<PublishOffer />} />
           <Route path="/mis-publicaciones" element={<MyPublications />} />
           <Route path="/configuracion-empresa" element={<ConfiguracionCompany />} />

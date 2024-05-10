@@ -25,6 +25,12 @@
   /* margin: 20px 0; */
 }
 
+.contenedorBuscador {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 60px;
+}
+
 .formulario {
   /* border: 1px solid blue; */
   border: none;
@@ -47,10 +53,6 @@
   flex-grow: 1;
 }
 
-.fontBlack {
-  color: black;
-}
-
 .inputLugar {
   /* width: 100%; */
   padding: 10px 15px;
@@ -69,6 +71,10 @@
   padding: 10px 15px;
   outline: none;
   font-size: 1.1rem;
+}
+
+.fontBlack {
+  color: black;
 }
 
 .contenedorCarreras {
